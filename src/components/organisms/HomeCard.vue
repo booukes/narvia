@@ -11,7 +11,7 @@ const { handleMove, handleLeave } = useTiltCard(cardRef);
 
 <template>
   <div class="perspective-near">
-    <div ref="cardRef" @mouseleave="handleLeave" @mousemove="handleMove" class="flex flex-col justify-between items-center w-[32rem] h-[48rem] rounded-4xl bg-zinc-200/5 backdrop-blur-xs" >
+    <div ref="cardRef" @mouseleave="handleLeave" @mousemove="handleMove" class="flex flex-col justify-between items-center md:w-[32rem] h-[70vh] rounded-4xl bg-zinc-200/5 backdrop-blur-xs" >
       <Logo id="logo" class="w-96 h-32"></Logo>
       <LoginFields class="-mt-16"/>
       <CardFooter class="mb-2" />
