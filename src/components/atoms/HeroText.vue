@@ -7,7 +7,7 @@ onMounted(() => {
   let targetX = 0, targetY = 0
   let rafId
 
-  // Move handler — light and fast
+  // Move handler – light and fast
   const handleMove = (e) => {
     const rect = window
     mouseX = (e.clientX / rect.innerWidth - 0.5) * 10
@@ -40,40 +40,44 @@ onMounted(() => {
         <span class="block big shine delay">Shine.</span>
         <span class="block big glow delay2">Be seen.</span>
       </h2>
-      <p class="tagline">where creativity finds its light.</p>
+      <p class="tagline md:text-nowrap mx-auto">where creativity finds its light.</p>
     </div>
   </div>
 </template>
 
 <style scoped>
 .hero-wrapper {
-  position: fixed;
-  left: 2rem;
-  top: 25%;
+  position: relative;
+
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  perspective: 1000px;
+  perspective: none
+}
+
+@media (min-width: 768px) {
+  .hero-wrapper {
+    width: 30vw;
+  }
 }
 
 .hero-text {
   font-family: 'Playfair Display', serif;
   user-select: none;
-  position: fixed;
-  left: 2rem;
-  top: 0%;
+  position: relative;
   color: #fff;
   z-index: 5;
-  will-change: transform; /* GPU optimization */
+  will-change: transform;
   filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.3));
+  text-align: center;
+  padding: 0 1rem;
 }
+
 
 h2 {
   line-height: 1.05;
 }
 
 .big {
-  font-size: clamp(4rem, 7vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 800;
   display: block;
   letter-spacing: -0.02em;
@@ -110,8 +114,8 @@ h2 {
   -webkit-text-fill-color: transparent;
   animation: pulse 2.5s ease-in-out infinite;
   text-shadow:
-      0 0 30px rgba(255, 80, 180, 0.5),
-      0 0 60px rgba(255, 80, 180, 0.3);
+      0 0 10px rgba(255, 80, 180, 0.5),
+      0 0 30px rgba(255, 80, 180, 0.3);
 }
 
 .delay { animation-delay: 1.5s; }
@@ -137,14 +141,14 @@ h2 {
 @keyframes pulse {
   0%, 100% {
     text-shadow:
-        0 0 30px rgba(255, 80, 180, 0.5),
-        0 0 60px rgba(255, 80, 180, 0.3);
+        0 0 10px rgba(255, 80, 180, 0.5),
+        0 0 30px rgba(255, 80, 180, 0.3);
     transform: scale(1);
   }
   50% {
     text-shadow:
-        0 0 50px rgba(255, 120, 200, 0.8),
-        0 0 100px rgba(255, 120, 200, 0.5);
+        0 0 30px rgba(255, 120, 200, 0.8),
+        0 0 50px rgba(255, 120, 200, 0.5);
     transform: scale(1.02);
   }
 }

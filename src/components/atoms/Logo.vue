@@ -11,17 +11,24 @@
   justify-content: center;
   margin-right: -15px;
 }
+
+@media (max-width: 640px) {
+  .logo-container{
+    margin-right: -8px;
+  }
+}
+
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 6rem;
+  font-size: clamp(4rem,3.5vw, 6rem);
   font-weight: 700;
-  letter-spacing: 15px;
+  letter-spacing: clamp(8px, 2vw, 15px);
   position: relative;
 }
 
 h1 span {
   display: inline-block;
-  animation: wave 2.5s ease-in-out infinite;
+  animation: wave 5s ease-in-out infinite;
 }
 
 h1 span:nth-child(1) { animation-delay: 0s; }
@@ -37,13 +44,6 @@ h1 span:nth-child(6) { animation-delay: 0.5s; }
   }
   50% {
     transform: translateY(-8px);
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 4rem;
-    letter-spacing: 8px;
   }
 }
 </style>

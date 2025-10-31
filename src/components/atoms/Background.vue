@@ -65,9 +65,7 @@ onMounted(() => {
   height: 160%;
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='white' opacity='0.25'/%3E%3C/svg%3E");
   background-size: 6px 6px;
-  opacity: 0.06;
-  animation: slowDrift 160s linear infinite;
-  will-change: transform;
+  opacity: 0.2;
 }
 
 @keyframes slowDrift {
@@ -88,8 +86,8 @@ onMounted(() => {
   width: 80px;
   height: 120px;
   border-radius: 40% 40% 50% 50%;
-  background: radial-gradient(circle at 50% 40%, rgba(255, 210, 120, 0.9), rgba(255, 80, 150, 0.6) 70%, transparent 100%);
-  box-shadow: 0 0 30px rgba(255, 160, 100, 0.4), 0 0 60px rgba(255, 100, 180, 0.2);
+  background: radial-gradient(circle at 50% 40%, rgba(255, 210, 120, 0.6), rgba(255, 80, 150, 0.3) 70%, transparent 100%);
+  box-shadow: 0 0 30px rgba(255, 160, 100, 0.2), 0 0 60px rgba(255, 100, 180, 0.1);
   opacity: 0.75;
   mix-blend-mode: screen;
   will-change: transform, opacity;
