@@ -1,11 +1,18 @@
 <script setup>
+import Background from "@/components/atoms/Background.vue";
 </script>
 
 <template>
-  <canvas id="starfield" class="fixed -z-10"></canvas>
-  <RouterView class="text-zinc-200"/>
+  <div class="relative min-h-screen overflow-hidden">
+    <Background />
+    <RouterView class="text-zinc-200 relative z-10" />
+  </div>
 </template>
 
-<style scoped>
 
+<style scoped>
+html, body, #app {
+  height: 100%;
+  overflow: hidden;
+}
 </style>

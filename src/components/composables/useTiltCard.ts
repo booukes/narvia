@@ -18,7 +18,7 @@ export function useTiltCard(cardRef: Ref<HTMLElement | null>) {
         // dynamically add shadow depending on angle
         const shadowX = -ry * 2;
         const shadowY = -rx * 4;
-        cardRef.value.style.boxShadow = `${shadowX}px ${shadowY}px 40px rgba(146, 12, 52, 0.3)`;
+        cardRef.value.style.boxShadow = `${shadowX}px ${shadowY}px 40px rgba(255, 0, 255, 0.2)`;
     };
 
     const handleLeave = () => {

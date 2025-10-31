@@ -1,6 +1,6 @@
 <template>
-  <div class="logo-container">
-    <h1>
+  <div class="logo-container ">
+    <h1 class="text-pink-400/40">
       <span>n</span><span>a</span><span>r</span><span>v</span><span>i</span><span>a</span>
     </h1>
   </div>
@@ -16,8 +16,6 @@ h1 {
   font-size: 6rem;
   font-weight: 700;
   letter-spacing: 15px;
-  color: #56071c;
-  text-shadow: -2px 2px 2px #000000;
   position: relative;
 }
 
