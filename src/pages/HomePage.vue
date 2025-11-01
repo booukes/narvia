@@ -23,7 +23,7 @@ onBeforeUnmount(() => {
     <!-- Hero Text -->
     <section
         class="w-full md:w-auto flex flex-col items-center md:items-end justify-center
-             text-center md:text-right space-y-5 md:mr-6"
+             text-center md:text-right space-y-5 md:mr-6 z-40"
     >
       <HeroText />
     </section>

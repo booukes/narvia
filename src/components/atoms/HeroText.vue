@@ -33,14 +33,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="hero-wrapper text-nowrap">
+  <div class="hero-wrapper isolate z-50 text-nowrap">
     <div class="hero-text">
       <h2>
         <span class="block big gloss">Create.</span>
         <span class="block big shine delay">Shine.</span>
         <span class="block big glow delay2">Be seen.</span>
       </h2>
-      <p class="tagline md:text-nowrap mx-auto">where creativity finds its light.</p>
+      <p class="tagline md:text-nowrap mx-auto">where creativity finds its light</p>
     </div>
   </div>
 </template>
@@ -64,9 +64,11 @@ onMounted(() => {
   user-select: none;
   position: relative;
   color: #fff;
-  z-index: 5;
+  isolation: isolate;
+  z-index: 100;
   will-change: transform;
-  filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.3));
+  filter: none !important;
+  -webkit-font-smoothing: antialiased;
   text-align: center;
   padding: 0 1rem;
 }

@@ -17,7 +17,7 @@ const toggleMode = () => {
 </script>
 
 <template>
-  <div class="perspective-normal">
+  <div class="perspective-near">
     <div
         ref="cardRef"
         @mouseleave="handleLeave"
@@ -38,7 +38,7 @@ const toggleMode = () => {
         <component
             :is="mode === 'login' ? LoginFields : RegisterFields"
             @switchMode="toggleMode"
-            class="-mt-8 w-[80%]"
+            class="-mt-2 w-[80%]"
             :key="mode"
         />
       </Transition>

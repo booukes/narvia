@@ -76,7 +76,7 @@ onMounted(() => {
 .base-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 70% 80%, rgba(255, 0, 128, 0.1), rgba(0, 0, 0, 0) 70%),
+  background: radial-gradient(circle at 70% 80%, rgba(255, 0, 128, 0.3), rgba(25, 255, 228, 0.1) 70%),
   radial-gradient(circle at 20% 20%, rgba(0, 255, 200, 0.08), rgba(0, 0, 0, 0) 80%);
   pointer-events: none;
 }

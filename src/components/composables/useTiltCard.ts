@@ -9,8 +9,8 @@ export function useTiltCard(cardRef: Ref<HTMLElement | null>) {
         const y = ev.clientY - rect.top;
         const cx = rect.width / 2;
         const cy = rect.height / 2;
-        const rx = ((y - cy) / cy) * 1.5;
-        const ry = ((x - cx) / cx) * 1.2;
+        const rx = ((y - cy) / cy) * 1.8;
+        const ry = ((x - cx) / cx) * 1.5;
 
         cardRef.value.style.transition = "transform 0.05s ease-out";
         cardRef.value.style.transform = `rotateX(${-rx}deg) rotateY(${ry}deg)`;
