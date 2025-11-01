@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Logo from "@/components/atoms/Logo.vue";
-import { ref } from "vue";
-import { useTiltCard } from "@/components/composables/useTiltCard";
+import {onMounted, ref} from "vue";
+import { useTiltCard } from "@/composables/useTiltCard";
 import LoginFields from "@/components/molecules/LoginFields.vue";
 import CardFooter from "@/components/molecules/CardFooter.vue";
 import RegisterFields from "@/components/molecules/RegisterFields.vue";
@@ -24,7 +24,7 @@ const toggleMode = () => {
         @mousemove="handleMove"
         @mouseenter="shadowApply"
         class="flex flex-col justify-between items-center
-             w-[90vw] sm:w-[32rem] px-4 rounded-3xl backdrop-blur-md border border-white/10
+             w-[90vw] sm:w-[32rem] px-4 rounded-3xl border border-white/10
              shadow-[0_0_40px_rgba(255,0,255,0.4)] overflow-hidden
              h-[85vh]"
     >

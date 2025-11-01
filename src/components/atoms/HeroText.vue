@@ -48,16 +48,17 @@ onMounted(() => {
 <style scoped>
 .hero-wrapper {
   position: relative;
-
+  width: 40vw;
   overflow: visible;
   perspective: none
 }
 
 @media (min-width: 768px) {
   .hero-wrapper {
-    width: 30vw;
+    width: 40vw;
   }
 }
+
 
 .hero-text {
   font-family: 'Playfair Display', serif;
@@ -65,12 +66,16 @@ onMounted(() => {
   position: relative;
   color: #fff;
   isolation: isolate;
-  z-index: 100;
+  z-index: 9999;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
   filter: none !important;
+  -webkit-filter: none !important;
   -webkit-font-smoothing: antialiased;
   text-align: center;
   padding: 0 1rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 

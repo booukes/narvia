@@ -1,5 +1,22 @@
 <script setup>
-const emit = defineEmits(["switchMode"])
+import { ref } from 'vue'
+import { useAuth } from '@/composables/useAuth.js'
+
+const emit = defineEmits(['switchMode'])
+
+const email = ref('')
+const password = ref('')
+
+const { signIn, loading, error } = useAuth()
+
+
+
+const handleLogin = async () => {
+  console.log('email ref object:', email)
+  console.log('email value:', email.value)
+  console.log('password value:', password.value)
+  await signIn(email.value, password.value)
+}
 </script>
 <template>
   <div class="flex flex-col items-center text-zinc-300 w-full px-2 sm:px-4">
@@ -9,6 +26,7 @@ const emit = defineEmits(["switchMode"])
     </label>
     <input
         name="email"
+        v-model="email"
         class="border border-zinc-500/30 rounded-xl p-3 bg-zinc-100/5 mb-3
              focus:outline-pink-500/70 focus:outline-1
              focus:bg-zinc-100/10 w-full placeholder-zinc-500
@@ -23,6 +41,7 @@ const emit = defineEmits(["switchMode"])
     </label>
     <input
         name="password"
+        v-model="password"
         class="border border-zinc-500/30 rounded-xl p-3 bg-zinc-100/5
              focus:outline-pink-500/70 focus:outline-1
              focus:bg-zinc-100/10 w-full placeholder-zinc-500
@@ -30,16 +49,20 @@ const emit = defineEmits(["switchMode"])
         placeholder="eg. qwerty123"
         type="password"
     />
-
+    <p v-if="error" class="rounded-sm border border-red-500 mt-8 p-1 bg-red-500/20 text-red-400 text-sm">
+      {{ error }}
+    </p>
     <!-- Sign In Button -->
     <button
         class="mx-auto bg-pink-500/40 hover:bg-pink-700/60 mt-6 mb-4 w-full sm:w-40 h-10 sm:h-11 rounded-xl
              border border-pink-500/50 shadow-[0_0_10px_rgba(255,0,100,0.2)]
              hover:shadow-[0_0_15px_rgba(255,0,100,0.3)]
              text-zinc-200 font-semibold tracking-wide transition-all duration-300 text-sm sm:text-base"
+        @click="handleLogin"
     >
       sign in
     </button>
+
 
     <!-- Links -->
     <a
@@ -62,6 +85,3 @@ const emit = defineEmits(["switchMode"])
     </a>
   </div>
 </template>
-
-<script setup>
-</script>
