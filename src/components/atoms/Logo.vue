@@ -1,5 +1,5 @@
 <template>
-  <div class="logo-container ">
+  <div class="logo-container">
     <h1 class="text-pink-400/40">
       <span>n</span><span>a</span><span>r</span><span>v</span><span>i</span><span>a</span>
     </h1>

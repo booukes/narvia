@@ -33,7 +33,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="hero-wrapper">
+  <div class="hero-wrapper text-nowrap">
     <div class="hero-text">
       <h2>
         <span class="block big gloss">Create.</span>
@@ -49,7 +49,7 @@ onMounted(() => {
 .hero-wrapper {
   position: relative;
 
-  overflow: hidden;
+  overflow: visible;
   perspective: none
 }
 
