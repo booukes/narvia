@@ -57,6 +57,7 @@ onMounted(fetchDashboardData)
           :user="user"
           :photosCount="photos.length"
           :featuredCount="photos.filter(p => p.is_featured).length"
+          @upload="showUpload = true"
       />
 
       <PhotoGrid

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PhotoUploadModal from '@/components/organisms/PhotoUploadModal.vue'
 const props = defineProps<{
   user: any
   photosCount: number
