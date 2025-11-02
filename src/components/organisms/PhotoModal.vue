@@ -97,6 +97,8 @@ const deletePhoto = async () => {
             <p>🔘 f/{{ props.photo.aperture }}</p>
             <p>⚡ {{ props.photo.shutter_speed }}s</p>
             <p>📏 {{ props.photo.focal_length }}mm</p>
+            <p>💻 {{ props.photo.software }}</p>
+
             <p class="col-span-2 sm:col-span-3 text-center">
               📅 {{ new Date(props.photo.taken_at).toLocaleDateString() }}
             </p>

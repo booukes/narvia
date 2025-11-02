@@ -76,10 +76,10 @@ const handleLogin = async () => {
         class="mx-auto bg-pink-500/40 hover:bg-pink-700/60 mt-6 mb-4 w-full sm:w-40 h-10 sm:h-11 rounded-xl
              border border-pink-500/50 shadow-[0_0_10px_rgba(255,0,100,0.2)]
              hover:shadow-[0_0_15px_rgba(255,0,100,0.3)]
-             text-zinc-200 font-semibold tracking-wide transition-all duration-300 text-sm sm:text-base"
+             text-zinc-200 font-semibold tracking-wide transition-all duration-300 text-sm cursor-pointer sm:text-base"
         @click="handleLogin"
     >
-      sign in
+      {{ loading ? 'signing in...' : 'sign in' }}
     </button>
 
 

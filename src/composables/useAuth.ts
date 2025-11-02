@@ -2,11 +2,11 @@ import { ref, onMounted } from "vue"
 import { supabase } from "@/supabase"
 
 const user = ref(null)
+const loading = ref(false)
+const error = ref<string | null>(null)
+
 
 export function useAuth() {
-    const loading = ref(false)
-    const error = ref<string | null>(null)
-
     const signUp = async (email: string, password: string, username: string) => {
         loading.value = true
         error.value = null

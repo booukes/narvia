@@ -26,7 +26,7 @@ const props = defineProps<{
 
         <!-- Upload button -->
         <button
-            class="mt-3 sm:mt-0 px-4 py-1.5 bg-pink-500/20 hover:bg-pink-500/40 border border-pink-500/30 rounded-lg text-pink-300 text-sm font-medium transition"
+            class="mt-3 sm:mt-0 px-4 py-1.5 bg-pink-500/20 hover:bg-pink-500/40 border border-pink-500/30 rounded-lg text-pink-300 text-sm cursor-pointer font-medium transition"
             @click="$emit('upload')"
         >
           ➕ Upload
