@@ -2,6 +2,10 @@
 import { ref } from 'vue'
 import { supabase } from '@/supabase'
 
+import {useRouter} from 'vue-router'
+
+const router = useRouter()
+
 const emit = defineEmits(['profileComplete'])
 
 const full_name = ref('')
@@ -89,7 +93,7 @@ const handleSubmit = async () => {
     if (updateError) throw updateError
     if (!updateData || updateData.length === 0) throw new Error('Update failed - no rows affected')
 
-    emit('profileComplete')
+    router.push('/dashboard')
   } catch (err: any) {
     console.error(err)
     error.value = err.message
