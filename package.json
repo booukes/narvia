@@ -14,6 +14,10 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.78.0",
     "@tailwindcss/vite": "^4.1.16",
+    "backblaze-b2": "^1.7.1",
+    "dotenv": "^17.2.3",
+    "exifr": "^7.1.3",
+    "supabase": "^2.54.11",
     "tailwindcss": "^4.1.16",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
@@ -23,5 +27,18 @@
     "vite": "^7.1.11",
     "vite-plugin-svgr": "^4.5.0",
     "vite-plugin-vue-devtools": "^8.0.3"
-  }
+  },
+  "description": "",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/booukes/narvia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/booukes/narvia/issues"
+  },
+  "homepage": "https://github.com/booukes/narvia#readme"
 }

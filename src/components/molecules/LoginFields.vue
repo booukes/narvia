@@ -1,22 +1,41 @@
 <script setup>
 import { ref } from 'vue'
 import { useAuth } from '@/composables/useAuth.js'
+import {useDbOps} from "@/composables/useDbOps.js";
+import {useRouter} from "vue-router";
 
-const emit = defineEmits(['switchMode'])
+const emit = defineEmits(['switchMode', 'start'])
 
 const email = ref('')
 const password = ref('')
 
-const { signIn, loading, error } = useAuth()
+const router = useRouter()
 
+const { signIn, loading, error } = useAuth()
+const { hasUserStarted } = useDbOps()
 
 
 const handleLogin = async () => {
-  console.log('email ref object:', email)
-  console.log('email value:', email.value)
-  console.log('password value:', password.value)
-  await signIn(email.value, password.value)
+  const { data, error } = await signIn(email.value, password.value)
+
+  console.log('SIGNIN DATA:', data)
+  console.log('SIGNIN ERROR:', error)
+
+  if (error) {
+    console.error('Login failed:', error)
+    return
+  }
+
+  await new Promise(resolve => setTimeout(resolve, 300))
+
+  const started = await hasUserStarted()
+  console.log('Started check result:', started)
+
+  if (!started) emit("start")
+  else router.push('/dashboard')
 }
+
+
 </script>
 <template>
   <div class="flex flex-col items-center text-zinc-300 w-full px-2 sm:px-4">
@@ -66,7 +85,7 @@ const handleLogin = async () => {
 
     <!-- Links -->
     <a
-        class="flex justify-center font-semibold my-2 text-pink-500/70 hover:text-rose-700
+        class="flex justify-center font-semibold my-2 text-pink-500/70 hover:text-pink-500
              transition-colors duration-200 text-sm sm:text-base cursor-pointer"
         href="/reset-password"
     >
@@ -76,7 +95,7 @@ const handleLogin = async () => {
     <div class="w-32 sm:w-40 h-[1px] mx-auto bg-pink-600/40 mt-2 mb-2"></div>
 
     <a
-        class="flex justify-center font-semibold my-1 text-pink-500/70 hover:text-rose-700
+        class="flex justify-center font-semibold my-1 text-pink-500/70 hover:text-pink-500
              transition-colors duration-200 text-sm sm:text-base cursor-pointer"
 
         @click.prevent="emit('switchMode')"

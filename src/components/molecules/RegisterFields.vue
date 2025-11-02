@@ -85,7 +85,7 @@ const handleRegister = async () => {
     <div class="w-32 sm:w-40 h-[1px] mx-auto bg-pink-600/40 mt-2 mb-2"></div>
 
     <a
-        class="flex justify-center font-semibold my-1 text-pink-500/70 hover:text-rose-700
+        class="flex justify-center font-semibold my-1 text-pink-500/70 hover:text-pink-500
              transition-colors duration-200 text-sm sm:text-base cursor-pointer"
         @click="emit('switchMode')"
     >

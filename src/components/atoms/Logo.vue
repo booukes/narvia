@@ -20,7 +20,7 @@
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(4rem,3.5vw, 6rem);
+  font-size: clamp(4rem,4.5vw, 7rem);
   font-weight: 700;
   letter-spacing: clamp(8px, 2vw, 15px);
   position: relative;
