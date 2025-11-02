@@ -12,7 +12,7 @@ links.forEach(link => stream.write(link))
 stream.end()
 
 streamToPromise(stream).then(data => {
-    const output = createWriteStream('./public/sitemap.xml')
+    const output = createWriteStream('./public/sitemap_index.xml')
     output.write(data)
     output.end()
     console.log('✅ Sitemap generated successfully!')
